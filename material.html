@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <style>
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+    }
+
+    th {
+      font-weight: bold;
+      background-color: #f2f8fc;
+    }
+
+    .no-border td {
+      border: none;
+    }
+
+    tr.row-spacing {
+      line-height: 1.2;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Type of Material</th>
+          <th>Brand</th>
+          <th>Material Name</th>
+          <th>Composition</th>
+          <th>Country</th>
+        </tr>
+      </thead>
+      <tbody>
+        <script>
+          var data = [
+            "Porcelain Fused to Metal",
+            "NP for PFM (Co-Cr)", "ARGEN", "Argeloy NP Supreme", "Co 61%, Cr 27%, Mo 6%, W 5%, (Si/ C/ Fe/ Mn <1%)", "USA",
+            "NP Powder for PFM (Co-Cr)", "ARGEN", "Argeloy SLM Supreme", "Co 61%, Cr 27%, Mo 6%, W 5%, (Si/ C/ Fe/ Mn <1%)", "",
+            "Semi-Precious for PFM", "ARGEN", "Platinum Plus, White", "Pd25%，Co42.75%,Cr20% Mo 12%", "USA",
+            "Semi-Precious for PFM", "ARGEN", "Argistar 43+, White", "Au2.0%,Pd42.9%,Ag46.0%, In 8.0%, Zn1.0%", "USA",
+            "Semi-Precious for PFM", "ARGEN", "Argelite 54B, White", "Pd53.5%, Ag37.5%,Sn8.3%", "",
+            "High Noble for PFM", "ARGEN", "Argedent Euro, White", "Au 40.0%,Pd 39.4%,Ag 10.0%", "USA",
+            "High Noble for PFM", "ARGEN", "Argedent  74, Yellow", "Au 74%,Pt 4.0%, Pd 7.6%,Ag 10.8%", "USA",
+            "High Noble for PFM", "ARGEN", "Argedent 90, Rich Yellow", "Au 89.5%,Pt 5.8%, Pd 1.6%,Ag 1.2%", "USA",
+            "Precious Metal Crown",
+            "Low Gold for FCC", "ARGEN", "Argenco Y+, Rosy Yellow", "Au 2.0%, Pd 34.9%, Ag 30%,In 30%", "USA",
+            "Gold for FCC", "IVOCLAR", "Minigold , Yellow", "Au 40%,Ag47.0%,Cu7.5%", "USA",
+            "High Gold for FCC", "ARGEN", "Argenco 62,Yellow", "Au 62%, Pd 1.0%,Ag 26.5%", "USA",
+            "High Gold for FCC", "ARGEN", "Argenco 75, Yellow", "Au 74.5%,Pd3.5%,Ag11.0%", "USA",
+            "All ceramic restorations",
+            "EMAX", "IVOCLAR", "IPS e.max Press", "Lithium disilicate glass-ceramic ingot", "Liechtenstein",
+            "Zirconia Block", "UPCERA", "Upcera MT, ST", "ZrO2+HfO2+Y2O3 >/ 99wt%, Y2O3 4.5-6.0wt%,Al2O3 ≤0.5wt%,Other Oxide ≤0.5wt%", "Shenzhen",
+            "Zirconia Block", "ADITE", "3D Multilayer", "ZrO2 90-95%, Y2O3 4-10%, AL2O3≤0.5%, Other Oxide < 0.5%", "China",
+            "Zirconia Block", "ARGEN", "ArgenZ HT+, HT+ Multilayer", "ZrO2 90-95%, Y2O3 4.5-6.0%, HfO2 ≤5%,Al2O3 ≤0.5%", "USA",
+            "Zirconia Block", "ARGEN", "ArgenZ ST Multilayer", "ZrO2 90-95%, Y2O3 4.5-6.0%, HfO2 ≤5%,Al2O3 ≤0.5%", "USA",
+            "Ceramic Powder",
+            "Ceramic Powder for PFM", "IVOCLAR", "IPS Classic", "dental ceramic materials", "Liechtenstein",
+            "Ceramic Powder for Emax", "IVOCLAR", "IPS e.max Ceram", "dental ceramic materials", "Liechtenstein",
+            "Ceramic Powder for Zirconia", "NORITAKE", "Cerabien ZR", "dental ceramic materials", "Japan",
+            "Composite",
+            "Composite", "IVOCLAR", "SR Nexco", "Methyl methacrylate", "Japan",
+            "Flexible Partial",
+            "Flexible Denture", "TCS", "Standard pink, Dark Pink, Clear", "Pure nylon resin with trace amounts of colorants", "USA",
+            "Flexible Denture", "VALPLAST", "Light Pink , Standard Pink", "Nylon resin with polyamide and glass fiber", "USA",
+            "Acrylic Partial",
+            "Arcylic Denture", "DENTSPLY", "\"Lucitone 199 (Heat Cured)\n(Standard Pink, Standard Meharry)\"", "Mixture on base of acrylic powder and catalyst.", "USA",
+            "Arcylic Denture", "DENTSPLY", "Lucitone 169 (Heat Cured)", "Acrylic polymer on the basis of methyl methacrylate", "USA",
+            "Arcylic Denture", "DENTSPLY", "Lucitone liquid (QC20)", "Polymethyl methacrylate, water", "USA",
+            "Resin Teeth",
+            "Arcylic Teeth", "IVOCLAR", "Ivostar Gnathostar", "Resin teeth based on polymethylmethacrylate", "Liechtenstein",
+            "Arcylic Teeth", "YAMAHACHI", "New ACE Acrylic Resin Teeth", "Resin teeth based on polymethylmethacrylate", "Japan",
+            "Partial Framework",
+            "NP for CCP (Co-Cr)", "BEGO", "Wironit R", "Co 63.00% Cr 30.00% Mo 5.00%", "Germany",
+            "NP for CCP (Co-Cr)", "Dentsply Austenal", "Vitallium 2000", "Co63.1%,Cr28.5%,Mo6.0%,Mn<1.0% Si<1.0%", "USA",
+            "Titanium for CCP", "Dentaurum", "Tritan", "Ti min.99.5%,bal.Fe,O,H.N,C", "Germany",
+            "Others",
+            "Bleaching tray", "Erkodent", "Soft EVA(1.0mm)", "Made of Ethylene terephthalate, Ketone, ethylene glycol, vinyl acetate, PETG, PE", "Germany",
+            "Thermoguard(Soft & Hard)", "Erkodent", "Erkoloc-pro(3.0mm)", "Made of Ethylene terephthalate, Ketone, ethylene glycol, vinyl acetate, PETG, PE & Polyethylene", "Germany",
+            "Thermoguard (Hard)", "Dentsply (TianJin)", "QC-20", "Made of Ethylene terephthalate, Ketone, ethylene glycol, vinyl acetate, PETG, PE & Polyethylene", "China",
+            "Thermoguard (Soft)", "Erkodent", "Soft EVA(3.0mm)", "Made of Ethylene terephthalate, Ketone, ethylene glycol, vinyl acetate, PETG, PE", "Germany",
+            "PMMA for Temporary Crown", "YAMAHACHI", "PMMA disk", "Mainly composed of polymethyl methacrylate", "Japan"
+          ];
+          for (var i = 0; i < data.length;) {
+            if (i === 0 || i === 41 || i === 62 || i === 88 || i === 104 || i === 110 || i === 121 || i === 137 || i === 148 || i === 164) { // 要設定只有一個欄位的特定行
+              document.write('<tr class="no-border,row-spacing">');
+              document.write('<td colspan="5"><strong>' + data[i] + '</strong></td>');
+              document.write('</tr>');
+              i++;
+            } else {
+              document.write('<tr>');
+              for (var j = 0; j < 5; j++) {
+                document.write('<td>' + data[i] + '</td>');
+                i++
+              }
+              document.write('</tr>');
+            }
+          }
+        </script>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>
